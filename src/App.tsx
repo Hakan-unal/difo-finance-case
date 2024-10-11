@@ -1,80 +1,112 @@
+import { Layout, theme, Menu } from "antd";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/home";
+import page404 from "./pages/404/404";
+import Sidebar from "./components/layout/sidebar";
+import type { MenuProps } from "antd";
+import {
+  AppstoreOutlined,
+  MailOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 
-import { Layout, theme } from "antd"
-import { Route, Routes } from 'react-router-dom';
-import Home from "./pages/home/home"
-import Login from "./pages/login/login"
-import Customer from "./pages/customer/management"
-import CustomerCreate from "./pages/customer/management/customerCreate"
-import Product from "./pages/product/management"
-import ProductCreate from "./pages/product/management/productCreate"
+const { Content, Header } = Layout;
+type MenuItem = Required<MenuProps>["items"][number];
 
-import Sales from "./pages/sales/management"
-import SalesCreate from "./pages/sales/management/salesCreate"
-
-
-import page404 from "./pages/404/404"
-import Sidebar from './components/layout/sidebar';
-import useLocalStorage from "./hooks/useLocalStorage"
-import { useEffect } from "react";
-import { navigator } from "./components/general/navigator";
-import { useNavigate } from "react-router-dom";
-
-const { Content } = Layout;
+const items: MenuItem[] = [
+  {
+    key: "sub1",
+    icon: <MailOutlined />,
+    label: "Navigation One",
+    children: [
+      {
+        key: "1-1",
+        label: "Item 1",
+        type: "group",
+        children: [
+          { key: "1", label: "Option 1" },
+          { key: "2", label: "Option 2" },
+        ],
+      },
+      {
+        key: "1-2",
+        label: "Item 2",
+        type: "group",
+        children: [
+          { key: "3", label: "Option 3" },
+          { key: "4", label: "Option 4" },
+        ],
+      },
+    ],
+  },
+  {
+    key: "sub2",
+    icon: <AppstoreOutlined />,
+    label: "Navigation Two",
+    children: [
+      { key: "5", label: "Option 5" },
+      { key: "6", label: "Option 6" },
+      {
+        key: "sub3",
+        label: "Submenu",
+        children: [
+          { key: "7", label: "Option 7" },
+          { key: "8", label: "Option 8" },
+        ],
+      },
+    ],
+  },
+  {
+    key: "sub4",
+    label: "Navigation Three",
+    icon: <SettingOutlined />,
+    children: [
+      { key: "9", label: "Option 9" },
+      { key: "10", label: "Option 10" },
+      { key: "11", label: "Option 11" },
+      { key: "12", label: "Option 12" },
+    ],
+  },
+];
 
 const App: React.FC = () => {
-  const [user, setUser] = useLocalStorage<any>("user", {})
-  const navigate = useNavigate();
+  const onClick: MenuProps["onClick"] = (e) => {
+    console.log("click", e);
+  };
 
   const {
     token: { colorBgContainer },
   } = theme.useToken();
 
-  useEffect(() => {
-    if (!user.accessToken) navigator(navigate, "/login")
-  }, [user])
-
-
-  return (<Layout >
-    <Sidebar />
+  return (
     <Layout>
-      {
-        // optional header
-        // <Header></Header>
-      }
-      <Content
-        style={{
-          margin: '24px 16px',
-          padding: 24,
-          minHeight: 400,
-          background: colorBgContainer,
-        }}
-      >
-        <Routes>
-          <Route path="/" Component={Home}></Route> 
-          <Route path="/login" Component={Login}></Route>
-          <Route path="/customer" Component={Customer}></Route>
-          <Route path="/customer/create" Component={CustomerCreate}></Route>
-          <Route path="/product" Component={Product}></Route>
-          <Route path="/product/create" Component={ProductCreate}></Route>
-          <Route path="/sales" Component={Sales}></Route>
-          <Route path="/sales/create" Component={SalesCreate}></Route>
+      <Layout>
+        <Header>
+          <Menu
+            theme="dark"
+            className="header-sidebar"
+            onClick={onClick}
+            mode="horizontal"
+            items={items}
+          />
+        </Header>
 
-
-          <Route path="*" Component={page404}></Route> 
-        </Routes>
-      </Content>
-      {
-        // optional header
-        // <Footer><Footer />
-      }
-
-
+        <Content
+          style={{
+            margin: "24px 16px",
+            padding: 24,
+            minHeight: 400,
+            background: colorBgContainer,
+          }}
+        >
+          <Routes>
+            <Route path="/" Component={Home}></Route>
+            <Route path="*" Component={page404}></Route>
+          </Routes>
+        </Content>
+      </Layout>
     </Layout>
-
-  </Layout>
-
-  )
-}
-
+  );
+};
 
 export default App;
