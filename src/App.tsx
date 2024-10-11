@@ -1,7 +1,8 @@
-import { Layout, theme, Menu, Button, Col, Row, Space } from "antd";
+import { Layout, theme, Menu, Col, Row, Space, Button } from "antd";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import page404 from "./pages/404/404";
+import {IoWalletOutline} from "react-icons/io5"
 import { CiUser } from "react-icons/ci";
 import type { MenuProps } from "antd";
 import {
@@ -9,10 +10,27 @@ import {
   MailOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-import { IoWalletOutline } from "react-icons/io5";
 
 const { Content, Header } = Layout;
 type MenuItem = Required<MenuProps>["items"][number];
+
+const items2: MenuItem[] = [
+  {
+    key: "sub11",
+    icon: <MailOutlined />,
+    label: "Connect Wallet",
+  },
+  {
+    key: "sub22",
+    icon: <AppstoreOutlined />,
+    label: "Log In",
+  },
+  {
+    key: "sub33",
+    label: "Sign Up",
+    icon: <SettingOutlined />,
+  },
+];
 
 const items: MenuItem[] = [
   {
@@ -44,29 +62,11 @@ const items: MenuItem[] = [
     key: "sub2",
     icon: <AppstoreOutlined />,
     label: "Navigation Two",
-    children: [
-      { key: "5", label: "Option 5" },
-      { key: "6", label: "Option 6" },
-      {
-        key: "sub3",
-        label: "Submenu",
-        children: [
-          { key: "7", label: "Option 7" },
-          { key: "8", label: "Option 8" },
-        ],
-      },
-    ],
   },
   {
     key: "sub4",
     label: "Navigation Three",
     icon: <SettingOutlined />,
-    children: [
-      { key: "9", label: "Option 9" },
-      { key: "10", label: "Option 10" },
-      { key: "11", label: "Option 11" },
-      { key: "12", label: "Option 12" },
-    ],
   },
 ];
 
@@ -84,8 +84,9 @@ const App: React.FC = () => {
       <Layout>
         <Header>
           <Row>
-            <Col span={16}>
+            <Col span={8} sm={12} md={16}>
               <Menu
+                expandIcon={<CiUser />}
                 theme="dark"
                 className="header-sidebar"
                 onClick={onClick}
@@ -93,18 +94,20 @@ const App: React.FC = () => {
                 items={items}
               />
             </Col>
-            <Col span={8}>
-              <Space>
-                <Button  ghost icon={<IoWalletOutline />}>
+            <Col span={16} sm={12} md={8}>
+               <Space >
+                <Button  className="header-button" ghost icon={<IoWalletOutline size={16} />}>
                   Connect Wallet
                 </Button>
-                <Button ghost icon={<CiUser />}>
+                <Button  className="header-button"  ghost icon={<CiUser size={16} />}>
                   Log In
                 </Button>
-                <Button ghost icon={<CiUser />}>
+                <Button  className="header-button"  ghost icon={<CiUser size={16} />}>
                   Sign Up
                 </Button>
-              </Space>
+              </Space> 
+
+             
             </Col>
           </Row>
         </Header>

@@ -2,3 +2,10 @@
 font-size: xs;    
 }
 
+
+.header-button{
+    border-radius: 10px;
+    padding: 16px 12px;
+    border-color: #FFFFFFA6;
+    color: #FFFFFFA6;
+}
