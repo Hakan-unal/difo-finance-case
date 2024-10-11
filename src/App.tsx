@@ -1,14 +1,15 @@
-import { Layout, theme, Menu } from "antd";
+import { Layout, theme, Menu, Button, Col, Row, Space } from "antd";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import page404 from "./pages/404/404";
-import Sidebar from "./components/layout/sidebar";
+import { CiUser } from "react-icons/ci";
 import type { MenuProps } from "antd";
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
+import { IoWalletOutline } from "react-icons/io5";
 
 const { Content, Header } = Layout;
 type MenuItem = Required<MenuProps>["items"][number];
@@ -82,21 +83,38 @@ const App: React.FC = () => {
     <Layout>
       <Layout>
         <Header>
-          <Menu
-            theme="dark"
-            className="header-sidebar"
-            onClick={onClick}
-            mode="horizontal"
-            items={items}
-          />
+          <Row>
+            <Col span={16}>
+              <Menu
+                theme="dark"
+                className="header-sidebar"
+                onClick={onClick}
+                mode="horizontal"
+                items={items}
+              />
+            </Col>
+            <Col span={8}>
+              <Space>
+                <Button  ghost icon={<IoWalletOutline />}>
+                  Connect Wallet
+                </Button>
+                <Button ghost icon={<CiUser />}>
+                  Log In
+                </Button>
+                <Button ghost icon={<CiUser />}>
+                  Sign Up
+                </Button>
+              </Space>
+            </Col>
+          </Row>
         </Header>
 
         <Content
           style={{
-            margin: "24px 16px",
+            margin: "2px 0px",
             padding: 24,
-            minHeight: 400,
-            background: colorBgContainer,
+            minHeight: 600,
+            background: "#001529",
           }}
         >
           <Routes>
