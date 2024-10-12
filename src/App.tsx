@@ -14,23 +14,6 @@ import {
 const { Content, Header } = Layout;
 type MenuItem = Required<MenuProps>["items"][number];
 
-const items2: MenuItem[] = [
-  {
-    key: "sub11",
-    icon: <MailOutlined />,
-    label: "Connect Wallet",
-  },
-  {
-    key: "sub22",
-    icon: <AppstoreOutlined />,
-    label: "Log In",
-  },
-  {
-    key: "sub33",
-    label: "Sign Up",
-    icon: <SettingOutlined />,
-  },
-];
 
 const items: MenuItem[] = [
   {
@@ -114,10 +97,10 @@ const App: React.FC = () => {
 
         <Content
           style={{
-            margin: "2px 0px",
+            margin: "0px 0px",
             padding: 24,
             minHeight: 600,
-            background: "#001529",
+            background: "#000000",
           }}
         >
           <Routes>

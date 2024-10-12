@@ -9,3 +9,28 @@ font-size: xs;
     border-color: #FFFFFFA6;
     color: #FFFFFFA6;
 }
+
+
+.home-card{
+    margin:0px 48px;
+    border: 1px solid red;
+    border-top: none;
+    background-color: #000000;
+    padding: 48px;
+}
+
+.home-card-paragraph-1{
+    color: #FFFFFF;
+    font-size: 6vh;
+}
+
+.home-card-paragraph-2{
+    color: #FFFFFFA6;
+    font-size: 2vh;
+}
+
+.home-card-paragraph-text{
+    color: #85abf4;
+    font-size: 6vh;
+    
+}
