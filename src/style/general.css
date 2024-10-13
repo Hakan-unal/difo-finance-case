@@ -13,8 +13,7 @@ font-size: xs;
 
 .home-card{
     margin:0px 48px;
-    border: 1px solid red;
-    border-top: none;
+    border: 5px solid white;
     background-color: #000000;
     padding: 48px;
 }
