@@ -49,9 +49,24 @@
 }
 
 .cursor-pointer:hover{
-cursor: pointer;
+    cursor: pointer;
 }
 
 .text-center{
     text-align: center;
+}
+
+
+.counter-card{
+    box-shadow: "5px 8px 24px 5px rgba(208, 216, 243, 0.6)" ;
+    background-color: #2C2C2C80;
+}
+
+.counter-input-card{
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+    border-radius: 20px;
+    border: 2px solid #85abf4;
 }

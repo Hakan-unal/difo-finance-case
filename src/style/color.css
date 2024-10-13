@@ -2,6 +2,15 @@
     color: white;
 }
 
+.text-green{
+    color: rgb(73, 189, 150);
+}
+
+
+.bg-dark{
+    background-color: black;
+}
+
 .text-bold{
     font-weight: bold;
 }
