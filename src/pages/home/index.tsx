@@ -1,24 +1,60 @@
 import { Typography, Card, Image, Row, Col, Button } from "antd";
 import homeCardImage from "../../assets/home-card.png";
 const { Paragraph, Text, Title } = Typography;
+import { AiOutlinePicture } from "react-icons/ai";
 
 const Home = (props: any) => {
+  const CoinIcon = (type: any) => {
+    return (
+      <AiOutlinePicture size={25} color="red">
+        {type}
+      </AiOutlinePicture>
+    );
+  };
+
   const coinList = [
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
-    { name: "SOL/USDT", price: 152.59, rate: 2.14, color: "green" },
+    {
+      icon: "SOL",
+      name: "SOL/USDT",
+      price: 152.59,
+      rate: 2.14,
+      color: "red",
+    },
+    {
+      icon: "SOL",
+      name: "SOL/USDT",
+      price: 152.59,
+      rate: 2.14,
+      color: "green",
+    },
+    {
+      icon: "SOL",
+      name: "SOL/USDT",
+      price: 152.59,
+      rate: 2.14,
+      color: "red",
+    },
+    {
+      icon: "SOL",
+      name: "SOL/USDT",
+      price: 152.59,
+      rate: 2.14,
+      color: "green",
+    },
+    {
+      icon: "SOL",
+      name: "SOL/USDT",
+      price: 152.59,
+      rate: 2.14,
+      color: "green",
+    },
+    {
+      icon: "SOL",
+      name: "SOL/USDT",
+      price: 152.59,
+      rate: 2.14,
+      color: "red",
+    },
   ];
   return (
     <Row gutter={[0, 36]}>
@@ -48,16 +84,23 @@ const Home = (props: any) => {
       <Col span={24}>
         <Title className="paragraph-2">TRENDING </Title>
 
-        <Row gutter={[12, 36]}>
-          {coinList.map((coin, index: number) => {
+        <Row gutter={[12, 24]}>
+          {coinList.map((coin: any, index: number) => {
             return (
-              <Col span={3}>
-                <Card className="coin-card" >
-                 <Title>{coin.name}</Title> 
-                 <Title>{coin.price}</Title>
-                 <Title>{coin.rate}</Title>
-                 <Title>{coin.color}</Title>
-
+              <Col span={4}>
+                <Card  className="coin-card cursor-pointer">
+                  <Row>
+                    <Col span={6}>
+                      <CoinIcon type={coin.icon} />
+                    </Col>
+                    <Col span={12}>
+                      <Text className="text-white f-14 text-bold">{coin.name}</Text>
+                      <Text className="text-white f-12">{coin.price}</Text>
+                    </Col>
+                    <Col span={6}>
+                      <Text style={{color:coin.color}}>{coin.rate}</Text>
+                    </Col>
+                  </Row>
                 </Card>
               </Col>
             );

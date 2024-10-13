@@ -37,5 +37,16 @@
 }
 
 .coin-card{
-    background-color: #2C2C2C;
+    background-color: #2C2C2C80;
+    padding: 0px;
+    border: none;
+}
+
+.coin-card:hover{
+    background-color: #2C2C2C60;
+}
+
+
+.cursor-pointer:hover{
+cursor: pointer;
 }
