@@ -1,7 +1,6 @@
 .header-sidebar{
-font-size: xs;    
+    font-size: xs;    
 }
-
 
 .header-button{
     border-radius: 10px;
@@ -10,10 +9,9 @@ font-size: xs;
     color: #FFFFFFA6;
 }
 
-
 .home-card{
     margin:0px 48px;
-    border: 5px solid white;
+    border: 5px solid #85abf4;
     background-color: #000000;
     padding: 48px;
 }
@@ -30,6 +28,14 @@ font-size: xs;
 
 .home-card-paragraph-text{
     color: #85abf4;
-    font-size: 6vh;
-    
+    font-size: 6vh;    
+}
+
+.paragraph-2{
+    background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
+    font-size: 6vh;    
+}
+
+.coin-card{
+    background-color: #2C2C2C;
 }

@@ -89,8 +89,6 @@ const App: React.FC = () => {
                   Sign Up
                 </Button>
               </Space> 
-
-             
             </Col>
           </Row>
         </Header>
