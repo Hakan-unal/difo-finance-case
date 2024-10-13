@@ -31,22 +31,27 @@
     font-size: 6vh;    
 }
 
-.paragraph-2{
-    background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
-    font-size: 6vh;    
+.title-2{
+    background: -webkit-linear-gradient(#eee, #85abf4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
 }
 
 .coin-card{
     background-color: #2C2C2C80;
     padding: 0px;
     border: none;
+    margin: 0px;
 }
 
 .coin-card:hover{
-    background-color: #2C2C2C60;
+    background-color: #85abf480;
 }
-
 
 .cursor-pointer:hover{
 cursor: pointer;
+}
+
+.text-center{
+    text-align: center;
 }

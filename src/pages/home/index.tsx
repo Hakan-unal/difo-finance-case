@@ -1,7 +1,12 @@
-import { Typography, Card, Image, Row, Col, Button } from "antd";
+import { Typography, Card, Image, Row, Col, Badge } from "antd";
 import homeCardImage from "../../assets/home-card.png";
+import {
+  AiOutlinePicture,
+  AiOutlineArrowUp,
+  AiOutlineArrowDown,
+} from "react-icons/ai";
+import { coinList } from "../../staticData/coinList.json";
 const { Paragraph, Text, Title } = Typography;
-import { AiOutlinePicture } from "react-icons/ai";
 
 const Home = (props: any) => {
   const CoinIcon = (type: any) => {
@@ -12,50 +17,6 @@ const Home = (props: any) => {
     );
   };
 
-  const coinList = [
-    {
-      icon: "SOL",
-      name: "SOL/USDT",
-      price: 152.59,
-      rate: 2.14,
-      color: "red",
-    },
-    {
-      icon: "SOL",
-      name: "SOL/USDT",
-      price: 152.59,
-      rate: 2.14,
-      color: "green",
-    },
-    {
-      icon: "SOL",
-      name: "SOL/USDT",
-      price: 152.59,
-      rate: 2.14,
-      color: "red",
-    },
-    {
-      icon: "SOL",
-      name: "SOL/USDT",
-      price: 152.59,
-      rate: 2.14,
-      color: "green",
-    },
-    {
-      icon: "SOL",
-      name: "SOL/USDT",
-      price: 152.59,
-      rate: 2.14,
-      color: "green",
-    },
-    {
-      icon: "SOL",
-      name: "SOL/USDT",
-      price: 152.59,
-      rate: 2.14,
-      color: "red",
-    },
-  ];
   return (
     <Row gutter={[0, 36]}>
       <Card className="home-card">
@@ -82,26 +43,42 @@ const Home = (props: any) => {
       </Card>
 
       <Col span={24}>
-        <Title className="paragraph-2">TRENDING </Title>
+        <Title className="title-2 text-center">TRENDING </Title>
 
-        <Row gutter={[12, 24]}>
+        <Row gutter={[12, 12]}>
           {coinList.map((coin: any, index: number) => {
             return (
-              <Col span={4}>
-                <Card  className="coin-card cursor-pointer">
-                  <Row>
-                    <Col span={6}>
-                      <CoinIcon type={coin.icon} />
-                    </Col>
-                    <Col span={12}>
-                      <Text className="text-white f-14 text-bold">{coin.name}</Text>
-                      <Text className="text-white f-12">{coin.price}</Text>
-                    </Col>
-                    <Col span={6}>
-                      <Text style={{color:coin.color}}>{coin.rate}</Text>
-                    </Col>
-                  </Row>
-                </Card>
+              <Col key={index} span={4}>
+                <Badge.Ribbon
+                  color={coin.color}
+                  text={
+                    <>
+                      {" "}
+                      {coin.color === "green" ? (
+                        <AiOutlineArrowUp />
+                      ) : (
+                        <AiOutlineArrowDown />
+                      )}{" "}
+                      {coin.rate}
+                    </>
+                  }
+                >
+                  <Card className="coin-card cursor-pointer">
+                    <Row>
+                      <Col span={6}>
+                        <CoinIcon type={coin.icon} />
+                      </Col>
+                      <Col span={12}>
+                        <Paragraph className="text-white f-12 text-bold">
+                          {coin.name}
+                        </Paragraph>
+                        <Paragraph className="text-white f-14">
+                         {coin.price}
+                        </Paragraph>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Badge.Ribbon>
               </Col>
             );
           })}

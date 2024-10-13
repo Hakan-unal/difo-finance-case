@@ -1,0 +1,46 @@
+{
+     "coinList" : [
+        {
+          "icon": "SOL",
+          "name": "SOL/USDT",
+          "price": 152.59,
+          "rate": 2.14,
+          "color": "red"
+        },
+        {
+          "icon": "ADA",
+          "name": "ADA/USDT",
+          "price": 15.59,
+          "rate": 4.14,
+          "color": "green"
+        },
+        {
+          "icon": "BTC",
+          "name": "BTC/USDT",
+          "price": 1520.59,
+          "rate": 24.14,
+          "color": "red"
+        },
+        {
+          "icon": "ETH",
+          "name": "ETH/USDT",
+          "price": 100.59,
+          "rate": 200.14,
+          "color": "green"
+        },
+        {
+          "icon": "XRP",
+          "name": "XRP/USDT",
+          "price": 10.59,
+          "rate": 20.14,
+          "color": "green"
+        },
+        {
+          "icon": "AVAX",
+          "name": "AVAX/USDT",
+          "price": 0.55,
+          "rate": 22.14,
+          "color": "red"
+        }
+      ]
+}
