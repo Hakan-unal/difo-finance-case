@@ -6,6 +6,9 @@
     color: rgb(73, 189, 150);
 }
 
+.text-red{
+    color: red;
+}
 
 .bg-dark{
     background-color: black;

@@ -199,11 +199,14 @@ const Home = (props: any) => {
                 <Paragraph className="text-white f-24 text-bold">The buy-back protection program</Paragraph>
                 <Paragraph className="text-white f-16">If the $DIFO token falls below the public sale price within the first 6 months after its initial listing, Difo Finance commits to repurchasing $DIFO tokens at a 90% pretection level.</Paragraph>
                 <Paragraph className="text-white f-12">You can check out detailed information about the buyback pretection program below  <Button ghost>Learn More</Button></Paragraph>
-
               </Card>
             </Col>
           </Row>
         </Card>
+
+        <Divider style={{ borderColor: "#85abf4" }}>
+          <Text className="f-24 text-white bg-dark">ATTENTION Information to consider about $DIFO token</Text>
+        </Divider>
       </Col>
     </Row>
   );
