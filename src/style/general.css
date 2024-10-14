@@ -50,6 +50,8 @@
 
 .cursor-pointer:hover{
     cursor: pointer;
+    opacity: 0.8;
+
 }
 
 .text-center{
@@ -70,3 +72,10 @@
     border-radius: 20px;
     border: 2px solid #85abf4;
 }
+
+
+.border-none{
+    border: none;
+}
+
+

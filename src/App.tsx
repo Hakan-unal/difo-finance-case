@@ -65,12 +65,13 @@ const App: React.FC = () => {
   return (
     <Layout>
       <Layout>
-        <Header>
+        <Header style={{backgroundColor:"#0b0031"}}>
           <Row>
             <Col span={8} sm={12} md={16}>
               <Menu
+              theme="dark"
+               style={{backgroundColor:"#0b0031"}}
                 expandIcon={<CiUser />}
-                theme="dark"
                 className="header-sidebar"
                 onClick={onClick}
                 mode="horizontal"

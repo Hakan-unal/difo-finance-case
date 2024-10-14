@@ -1,4 +1,4 @@
-import { Typography, Card, Image, Row, Col, Badge, Input } from "antd";
+import { Typography, Card, Image, Row, Col, Badge, Button } from "antd";
 import homeCardImage from "../../assets/home-card.png";
 import {
   AiOutlinePicture,
@@ -169,28 +169,37 @@ const Home = (props: any) => {
             </Col>
             <Col span={24}>
               <Paragraph className="text-white f-14">
-                The public sale will have 3 rounds. Round 1 will satrt on
+                The public sale will have 3 rounds. Round 1 will start on
                 October 15 at 15:00 UTC.{" "}
               </Paragraph>
             </Col>
           </Row>
-          <Row gutter={[12, 36]}>
-            <Col className="bg-dark">
-              <Card>
-                <Title className="text-green">Total Token Supply</Title>
-                <Paragraph>Total Token Supply</Paragraph>
+          <Row gutter={[48, 48]}>
+            <Col span={8} >
+              <Card style={{borderRadius:10}} className="bg-dark border-none cursor-pointer">
+                <Paragraph className="text-green f-18">Total Token Supply</Paragraph>
+                <Paragraph className="text-white f-12">MAX: It is limited to 879,000,000 $DIFO</Paragraph>
               </Card>
             </Col>
-            <Col>
-              <Card>
-                <Title className="text-green">Type of Sale</Title>
-                <Paragraph>Public Sale</Paragraph>
+            <Col span={8}>
+              <Card style={{borderRadius:10}} className="bg-dark border-none cursor-pointer">
+                <Paragraph className="text-green f-18">Type of Sale</Paragraph>
+                <Paragraph className="text-white f-12">Public Sale</Paragraph>
               </Card>
             </Col>
-            <Col>
-              <Card>
-                <Title className="text-green">Token Sale Format</Title>
-                <Paragraph>First come, first served</Paragraph>
+            <Col span={8}>
+              <Card style={{borderRadius:10}} className="bg-dark border-none cursor-pointer">
+                <Paragraph className="text-green f-18">Token Sale Format</Paragraph>
+                <Paragraph className="text-white f-12">First come, first served</Paragraph>
+              </Card>
+            </Col>
+
+            <Col span={24}>
+              <Card style={{borderRadius:10}} className="bg-dark border-none cursor-pointer">
+                <Paragraph className="text-white f-24 text-bold">The buy-back protection program</Paragraph>
+                <Paragraph className="text-white f-16">If the $DIFO token falls below the public sale price within the first 6 months after its initial listing, Difo Finance commits to repurchasing $DIFO tokens at a 90% pretection level.</Paragraph>
+                <Paragraph className="text-white f-12">You can check out detailed information about the buyback pretection program below  <Button ghost>Learn More</Button></Paragraph>
+
               </Card>
             </Col>
           </Row>
