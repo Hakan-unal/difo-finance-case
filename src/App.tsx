@@ -80,13 +80,13 @@ const App: React.FC = () => {
             </Col>
             <Col span={16} sm={12} md={8}>
                <Space >
-                <Button  className="header-button" ghost icon={<IoWalletOutline size={16} />}>
+                <Button  className="header-button border-none" ghost icon={<IoWalletOutline size={16} />}>
                   Connect Wallet
                 </Button>
-                <Button  className="header-button"  ghost icon={<CiUser size={16} />}>
+                <Button  className="header-button border-none"  ghost icon={<CiUser size={16} />}>
                   Log In
                 </Button>
-                <Button  className="header-button"  ghost icon={<CiUser size={16} />}>
+                <Button  className="header-button border-none"  ghost icon={<CiUser size={16} />}>
                   Sign Up
                 </Button>
               </Space> 
